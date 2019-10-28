@@ -14,8 +14,26 @@ class CreateDataKaryawan extends Migration
     public function up()
     {
         Schema::create('data_karyawan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integerIncrements('nip');
+            $table->float('nik');
+            $table->float('npwp');
+            $table->string('nama');
+            $table->string('tempat_lahir');
+            $table->date('tgl_lahir');
+            $table->string('jenis_kelamin');
+            $table->string('gol_darah');
+            $table->string('status');
+            $table->string('agama');
+            $table->char('alamat');
+            $table->float('no_hp');
+            $table->char('email');
+            $table->char('divisi');
+            $table->char('jabatan');
+            $table->date('tgl_join');
+            $table->char('password');
+
+
+
         });
     }
 
