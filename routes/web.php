@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/data_karyawan', 'karyawanController@index');
+Route::get('/dashboard', 'AdminController@dashboard');
+Route::get('/data_karyawan', 'AdminController@data_karyawan');
+Route::get('/data_gaji', 'AdminController@data_gaji');
+Route::get('/transaksi', 'AdminController@transaksi');
+Route::get('/laporan', 'AdminController@laporan');
