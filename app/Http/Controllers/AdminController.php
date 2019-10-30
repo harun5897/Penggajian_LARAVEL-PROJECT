@@ -30,4 +30,9 @@ class AdminController extends Controller
     {
         return view('admin.laporan');
     }
+
+    public function input_karyawan()
+    {
+        return view('admin.input_karyawan');
+    }
 }
