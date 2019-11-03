@@ -35,4 +35,9 @@ class AdminController extends Controller
     {
         return view('admin.input_karyawan');
     }
+
+    public function input_data_gaji()
+    {
+        return view('admin.input_data_gaji');
+    }
 }

@@ -24,8 +24,9 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Title</h3>
-
+            <a href="/data_gaji/input_data_gaji">
+                <button type="submit" class="btn btn-info">Tambah Data Gaji</button>
+            </a>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                     <i class="fas fa-minus"></i></button>
