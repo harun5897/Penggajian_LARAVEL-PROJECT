@@ -45,6 +45,6 @@ class AdminController extends Controller
     public function create(Request $request)
     {
         \App\Karyawan::create($request->all());
-        return $request->all();
+        return redirect('/data_karyawan');
     }
 }
