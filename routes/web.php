@@ -22,3 +22,4 @@ Route::get('/transaksi', 'AdminController@transaksi');
 Route::get('/laporan', 'AdminController@laporan');
 Route::get('/data_karyawan/input_karyawan', 'AdminController@input_karyawan');
 Route::get('/data_gaji/input_data_gaji', 'AdminController@input_data_gaji');
+Route::post('/karyawan/create', 'AdminController@create');

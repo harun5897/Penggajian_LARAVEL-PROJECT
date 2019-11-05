@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -34,77 +35,86 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" action="/karyawan/create" method="POST">
+                                {{csrf_field()}}
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>NIP</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>NIK</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="nik" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <!-- text input -->
                                         <div class="form-group">
                                             <label>Nama Depan</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="nama_depan" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Nama Belakang</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="nama_belakang" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <!-- text input -->
                                         <div class="form-group">
                                             <label>Tempat Lahir</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="tempat_lahir" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Tanggal Lahir</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="tanggal_lahir" type="date" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Jenis Kelamin</label>
+                                            <select name="jenis_kelamin" class="form-control" id="">
+                                                <option value="L">Laki-Laki</option>
+                                                <option value="P">Perempuan </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Jenis Kelamin</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <label>Status</label>
+                                            <select name="status" class="form-control" id="">
+                                                <option value="B">Belum Menikah</option>
+                                                <option value="S">Menikah </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Agama</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="agama" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <!-- text input -->
                                         <div class="form-group">
                                             <label>No Hp</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="no_hp" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <input name="email" type="email" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Alamat</label>
-                                            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                            <textarea name="alamat" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input name="password" type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                     </div>
                                 </div>

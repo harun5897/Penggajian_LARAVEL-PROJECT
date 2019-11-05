@@ -13,7 +13,8 @@ class AdminController extends Controller
 
     public function data_karyawan()
     {
-        return view('admin.data_karyawan');
+        $data_karyawan = \App\Karyawan::all();
+        return view('admin.data_karyawan', ['data_karyawan' => $data_karyawan]);
     }
 
     public function data_gaji()
@@ -39,5 +40,11 @@ class AdminController extends Controller
     public function input_data_gaji()
     {
         return view('admin.input_data_gaji');
+    }
+
+    public function create(Request $request)
+    {
+        \App\Karyawan::create($request->all());
+        return $request->all();
     }
 }

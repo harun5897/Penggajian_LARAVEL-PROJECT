@@ -208,6 +208,7 @@
                 "info": true,
                 "autoWidth": false,
             });
+
         });
     </script>
 </body>
