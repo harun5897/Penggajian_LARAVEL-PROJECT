@@ -24,11 +24,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <!-- <a href="/data_karyawan/input_karyawan">
-                <button type="submit" class="btn btn-info">Tambah Data Baru</button>
-            </a> -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
                 Tambah Data
             </button>
 
@@ -56,28 +52,27 @@
                     <tr>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nik}}</td>
-                        <td>{{$karyawan->nama_depan}}</td>
+                        <td>{{$karyawan->nama}}</td>
                         <td>{{$karyawan->tempat_lahir}}</td>
                         <td>{{$karyawan->jenis_kelamin}}</td>
                         <td>{{$karyawan->agama}}</td>
-                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-sm">Edit</a> </td>
+                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat <i class="fas fa-folder">
+                                </i></a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-
         <div class="card-footer">
             Footer
         </div>
 
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <!-- modal -->
+        <div class="modal fade" id="modal-default">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Input Data Karyawan</h5>
+                    <div class="modal-header bg-primary">
+                        <h4 class="modal-title">Input Data Karyawan</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -90,12 +85,8 @@
                                 <input name="nik" type="text" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
-                                <label for="">Nama Depan</label>
-                                <input name="nama_depan" type="text" class="form-control" placeholder="Enter ...">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Nama Belakang</label>
-                                <input name="nama_belakang" type="text" class="form-control" placeholder="Enter ...">
+                                <label for="">Nama</label>
+                                <input name="nama" type="text" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
                                 <label for="">Tempat Lahir</label>
@@ -135,18 +126,17 @@
                                 <label for="">alamat</label>
                                 <textarea name="alamat" class="form-control" rows="3" placeholder="Enter ..."></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input name="password" type="text" class="form-control" placeholder="Enter ...">
-                            </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    <div class="modal-footer justify-content-between">
+                        <button type="submit" class="btn btn-primary">Simpan <i class="fas fa-save"></i></button>
                         </form>
                     </div>
                 </div>
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
         </div>
+
     </div>
     <!-- /.card -->
 

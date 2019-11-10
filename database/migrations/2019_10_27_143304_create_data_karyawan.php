@@ -16,17 +16,26 @@ class CreateDataKaryawan extends Migration
         Schema::create('data_karyawan', function (Blueprint $table) {
             $table->integerIncrements('nip');
             $table->string('nik');
-            $table->string('nama_depan');
-            $table->string('nama_belakang');
+            $table->string('nama');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->string('jenis_kelamin');
             $table->string('status');
             $table->string('agama');
-            $table->char('alamat');
             $table->string('no_hp');
             $table->char('email');
-            $table->char('password');
+            $table->char('alamat');
+
+            $table->string('divisi');
+            $table->string('jabatan');
+            $table->string('gaji_pokok');
+            $table->string('bpjs_kes');
+            $table->string('bpjs_ket');
+
+            $table->string('jumlah_kasbon');
+            $table->string('potongan_perbulan');
+            $table->string('sisa_kasbon');
+            $table->string('status_kasbon');
         });
     }
 

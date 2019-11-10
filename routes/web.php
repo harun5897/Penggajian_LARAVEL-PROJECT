@@ -20,6 +20,20 @@ Route::get('/data_karyawan', 'AdminController@data_karyawan');
 Route::get('/data_gaji', 'AdminController@data_gaji');
 Route::get('/transaksi', 'AdminController@transaksi');
 Route::get('/laporan', 'AdminController@laporan');
-Route::get('/data_karyawan/input_karyawan', 'AdminController@input_karyawan');
-Route::get('/data_gaji/input_data_gaji', 'AdminController@input_data_gaji');
+Route::get('/data_kasbon', 'AdminController@data_kasbon');
+
+Route::get('/data_karyawan/update_karyawan', 'AdminController@update_karyawan');
+Route::get('/gaji', 'AdminController@update_gaji');
+Route::get('/kasbon', 'AdminController@kasbon');
+
 Route::post('/karyawan/create', 'AdminController@create');
+
+Route::get('data_karyawan/{nip}/edit', 'AdminController@edit');
+Route::post('data_karyawan/{nip}/update', 'AdminController@update');
+Route::get('data_karyawan/{nip}/delete', 'AdminController@delete');
+
+Route::get('gaji/{nip}/gaji', 'AdminController@edit_gaji');
+Route::post('gaji/{nip}/update_gaji', 'AdminController@gaji_update');
+
+Route::get('kasbon/{nip}/kasbon', 'AdminController@edit_kasbon');
+Route::post('kasbon/{nip}/kasbon_update', 'AdminController@kasbon_update');

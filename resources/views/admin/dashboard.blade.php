@@ -36,6 +36,9 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
+            <form role="form" action="/data_gaji/harun_gaji" method="POST">
+                <button type="submit" class="btn btn-info">Simpan<i class="fas fa-edit"></i></button>
+            </form>
             Footer
         </div>
         <!-- /.card-footer-->
