@@ -64,6 +64,12 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <label>Tanggal Kontrak</label>
+                                            <input name="tanggal_join" type="date" class="form-control" placeholder="Enter ..." value="{{$karyawan->tanggal_join}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
                                             <label>Jenis Kelamin</label>
                                             <select name="jenis_kelamin" class="form-control" id="">
                                                 <option value="L" @if($karyawan->jenis_kelamin == 'L') selected @endif>Laki-Laki</option>
@@ -104,6 +110,21 @@
                                         <div class="form-group">
                                             <label>Alamat</label>
                                             <textarea name="alamat" class="form-control" rows="3" placeholder="Enter ...">{{$karyawan->alamat}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Lama Kerja</label>
+                                            <select name="tnj_lama_kerja" class="form-control" id="">
+                                                <option value="0" @if($karyawan->tnj_lama_kerja == NULL) selected @endif>0 Tahun</option>
+                                                <option value="100000" @if($karyawan->tnj_lama_kerja == '100000') selected @endif>1 Tahun
+                                                </option>
+                                                <option value="300000" @if($karyawan->tnj_lama_kerja == '300000') selected @endif> 3 Tahun
+                                                </option>
+                                                <option value="500000" @if($karyawan->tnj_lama_kerja == '500000') selected @endif> 5 Tahun +
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

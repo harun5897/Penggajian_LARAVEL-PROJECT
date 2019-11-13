@@ -48,11 +48,46 @@
                     <tr>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nama}}</td>
-                        <td>{{$karyawan->divisi}}</td>
-                        <td>{{$karyawan->jabatan}}</td>
-                        <td>{{$karyawan->gaji_pokok}}</td>
-                        <td>{{$karyawan->bpjs_kes}}</td>
-                        <td>{{$karyawan->bpjs_ket}}</td>
+                        <td>
+                            @if($karyawan->divisi != NULL) {{$karyawan->divisi}}
+                            @endif
+
+                            @if($karyawan->divisi == NULL)
+                            <span class="badge badge-danger">Belum Lengkap</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($karyawan->jabatan != NULL) {{$karyawan->jabatan}}
+                            @endif
+
+                            @if($karyawan->jabatan == NULL)
+                            <span class="badge badge-danger">Belum Lengkap</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($karyawan->gaji_pokok != NULL) {{$karyawan->gaji_pokok}}
+                            @endif
+
+                            @if($karyawan->gaji_pokok == NULL)
+                            <span class="badge badge-danger">Belum Lengkap</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($karyawan->bpjs_kes != NULL) {{$karyawan->bpjs_kes}}
+                            @endif
+
+                            @if($karyawan->bpjs_kes == NULL)
+                            <span class="badge badge-danger">Belum Lengkap</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($karyawan->bpjs_kt != NULL) {{$karyawan->bpjs_kt}}
+                            @endif
+
+                            @if($karyawan->bpjs_kt == NULL)
+                            <span class="badge badge-danger">Belum Lengkap</span>
+                            @endif
+                        </td>
                         <td> <a href="/gaji/{{$karyawan->nip}}/gaji" class="btn btn-warning btn-md"> Lihat
                             </a></td>
                     </tr>

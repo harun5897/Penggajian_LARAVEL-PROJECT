@@ -71,6 +71,13 @@
                                         </div>
 
                                         <div class=" form-group row">
+                                            <label class="col-sm-2 col-form-label">Masa Kasbon</label>
+                                            <div class="col-sm-10">
+                                                <input name="potongan_perbulan" type="masa_kasbon" class="form-control" placeholder="Perbulan" value="{{$karyawan->potongan_perbulan}}">
+                                            </div>
+                                        </div>
+
+                                        <div class=" form-group row">
                                             <label class="col-sm-2 col-form-label">Perbulan</label>
                                             <div class="col-sm-10">
                                                 <input name="potongan_perbulan" type="perbulan" class="form-control" placeholder="Perbulan" value="{{$karyawan->potongan_perbulan}}">

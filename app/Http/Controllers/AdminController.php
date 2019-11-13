@@ -32,7 +32,8 @@ class AdminController extends Controller
 
     public function transaksi()
     {
-        return view('admin.transaksi');
+        $data_karyawan = \App\Karyawan::all();
+        return view('admin.transaksi', ['data_karyawan' => $data_karyawan]);
     }
 
     public function laporan()
@@ -106,5 +107,29 @@ class AdminController extends Controller
         $karyawan = \App\Karyawan::find($nip);
         $karyawan->update($request->all());
         return redirect('/data_kasbon');
+    }
+
+    public function kasbon_input(Request $request)
+    {
+        $karyawan = \App\Karyawan::find($request->nip);
+        $karyawan->update($request->all());
+        return redirect('/data_kasbon');
+    }
+
+    public function hitung_transaksi()
+    {
+        return view('admin.hitung_transaksi');
+    }
+
+    public function transaksi_edit($nip)
+    {
+        $karyawan = \App\Karyawan::find($nip);
+        return view('admin.hitung_transaksi', ['karyawan' => $karyawan]);
+    }
+
+    public function create_transaksi(Request $request)
+    {
+        \App\Transaksi::create($request->all());
+        return redirect('/transaksi');
     }
 }

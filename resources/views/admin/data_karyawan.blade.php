@@ -97,6 +97,10 @@
                                 <input name="tanggal_lahir" type="date" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
+                                <label for="">Tanggal Kontrak</label>
+                                <input name="tanggal_join" type="date" class="form-control" placeholder="Enter ...">
+                            </div>
+                            <div class="form-group">
                                 <label for="">Jenis Kelamin</label>
                                 <select name="jenis_kelamin" class="form-control" id="">
                                     <option value="L">Laki-Laki</option>

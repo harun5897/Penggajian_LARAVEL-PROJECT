@@ -25,6 +25,7 @@ Route::get('/data_kasbon', 'AdminController@data_kasbon');
 Route::get('/data_karyawan/update_karyawan', 'AdminController@update_karyawan');
 Route::get('/gaji', 'AdminController@update_gaji');
 Route::get('/kasbon', 'AdminController@kasbon');
+Route::get('/hitung_transaksi', 'AdminController@hitung_transaksi');
 
 Route::post('/karyawan/create', 'AdminController@create');
 
@@ -37,3 +38,8 @@ Route::post('gaji/{nip}/update_gaji', 'AdminController@gaji_update');
 
 Route::get('kasbon/{nip}/kasbon', 'AdminController@edit_kasbon');
 Route::post('kasbon/{nip}/kasbon_update', 'AdminController@kasbon_update');
+Route::post('kasbon/input', 'AdminController@kasbon_input');
+
+Route::get('transaksi/{nip}/edit', 'AdminController@transaksi_edit');
+
+Route::post('/transaksi/create', 'AdminController@create_transaksi');

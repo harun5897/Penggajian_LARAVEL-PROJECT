@@ -23,14 +23,6 @@
 
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
-
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-            </div>
-        </div>
         <div class="card-body">
             <div class="card">
                 <div class="card-body ">
@@ -67,31 +59,50 @@
                                             </div>
                                         </div>
 
-                                        <div class=" form-group row">
+                                        <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Jabatan</label>
                                             <div class="col-sm-10">
-                                                <input name="jabatan" type="jabatan" class="form-control" placeholder="Jabatan" value="{{$karyawan->jabatan}}">
+                                                <select name="jabatan" class="form-control" id="jabatan">
+                                                    <option value="Manager" @if($karyawan->jabatan == 'Manager') selected @endif>Manager</option>
+                                                    <option value="Kasir" @if($karyawan->jabatan == 'Kasir') selected @endif>Kasir</option>
+                                                    <option value="Staff" @if($karyawan->jabatan == 'Staff') selected @endif>Staff</option>
+                                                    <option value="Operator" @if($karyawan->jabatan == 'Operator') selected @endif>Operator</option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class=" form-group row">
                                             <label class="col-sm-2 col-form-label">Gaji Pokok</label>
                                             <div class="col-sm-10">
-                                                <input name="gaji_pokok" type="gajipokok" class="form-control" placeholder="Gaji Pokok" value="{{$karyawan->gaji_pokok}}">
+                                                <input name="gaji_pokok" id="gaji_pokok" type="gajipokok" class="form-control" placeholder="Gaji Pokok" value="{{$karyawan->gaji_pokok}}">
+                                            </div>
+                                        </div>
+
+                                        <div class=" form-group row">
+                                            <label class="col-sm-2 col-form-label">TNJ Jabatan</label>
+                                            <div class="col-sm-10">
+                                                <input name="tnj_jabatan" id="tnj_jabatan" type="text" class="form-control" placeholder="Rupiah" value="{{$karyawan->tnj_jabatan}}">
+                                            </div>
+                                        </div>
+
+                                        <div class=" form-group row">
+                                            <label class="col-sm-2 col-form-label">TNJ Lama Kerja</label>
+                                            <div class="col-sm-10">
+                                                <input name="tnj_lama_kerja" type="gajitext" class="form-control" placeholder="Rupiah" value="{{$karyawan->tnj_lama_kerja}}">
                                             </div>
                                         </div>
 
                                         <div class=" form-group row">
                                             <label class="col-sm-2 col-form-label">BPJS KES</label>
                                             <div class="col-sm-10">
-                                                <input name="bpjs_kes" type="bpjskes" class="form-control" placeholder="Bpjs Kes" value="{{$karyawan->bpjs_kes}}">
+                                                <input name="bpjs_kes" id="bpjs_kes" type="bpjskes" class="form-control" placeholder="Bpjs Kes" value="{{$karyawan->bpjs_kes}}">
                                             </div>
                                         </div>
 
                                         <div class=" form-group row">
-                                            <label class="col-sm-2 col-form-label">BPJS KET</label>
+                                            <label class="col-sm-2 col-form-label">BPJS KT</label>
                                             <div class="col-sm-10">
-                                                <input name="bpjs_ket" type="bpjsket" class="form-control" placeholder="Bpjs Ket" value="{{$karyawan->bpjs_ket}}">
+                                                <input name="bpjs_kt" id="bpjs_kt" type="text" class="form-control" placeholder="Rupiah" value="{{$karyawan->bpjs_kt}}">
                                             </div>
                                         </div>
 
