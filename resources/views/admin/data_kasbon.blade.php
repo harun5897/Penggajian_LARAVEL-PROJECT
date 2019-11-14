@@ -8,12 +8,6 @@
             <div class="col-sm-6">
                 <h3>Data Kasbon</h3>
             </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Data Kasbon</a></li>
-                    <li class="breadcrumb-item active">Blank Page</li>
-                </ol>
-            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -65,11 +59,6 @@
                 </tbody>
             </table>
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer-->
     </div>
     <!-- /.card -->
 
@@ -79,7 +68,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
-                    <h4 class="modal-title">Input Data Karyawan</h4>
+                    <h4 class="modal-title">Input Data Kasbon</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -106,11 +95,11 @@
                         </div>
                         <div class="form-group">
                             <label for="">Perbulan</label>
-                            <input name="potongan_perbulan" id="potongan_perbulan" type="text" class="form-control" placeholder="Rupiah">
+                            <input name="potongan_perbulan" id="potongan_perbulan" type="text" class="form-control" placeholder="Bulan" readonly>
                         </div>
                         <div class="form-group">
                             <label for="">Sisa Kasbon</label>
-                            <input name="sisa_kasbon" type="text" id="sisa_kasbon" class="form-control" placeholder="Rupiah">
+                            <input name="sisa_kasbon" type="text" id="sisa_kasbon" class="form-control" placeholder="Rupiah" readonly>
                         </div>
                         <div class="form-group">
                             <label for=""> Status Kasbon</label>
@@ -127,7 +116,6 @@
             </div>
             <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
 
 </section>

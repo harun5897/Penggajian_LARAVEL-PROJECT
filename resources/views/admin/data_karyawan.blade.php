@@ -8,12 +8,6 @@
             <div class="col-sm-6">
                 <h3>Data Karyawan</h3>
             </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Data Karyawan</a></li>
-                    <li class="breadcrumb-item active">Blank Page</li>
-                </ol>
-            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -56,17 +50,12 @@
                         <td>{{$karyawan->tempat_lahir}}</td>
                         <td>{{$karyawan->jenis_kelamin}}</td>
                         <td>{{$karyawan->agama}}</td>
-                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat <i class="fas fa-folder">
-                                </i></a></td>
+                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="card-footer">
-            Footer
-        </div>
-
         <!-- modal -->
         <div class="modal fade" id="modal-default">
             <div class="modal-dialog">

@@ -46,6 +46,12 @@ class AdminController extends Controller
         return view('admin.update_karyawan');
     }
 
+    public function manager()
+    {
+        return view('manager.manager');
+    }
+
+
     public function create(Request $request)
     {
         \App\Karyawan::create($request->all());
@@ -127,7 +133,7 @@ class AdminController extends Controller
         return view('admin.hitung_transaksi', ['karyawan' => $karyawan]);
     }
 
-    public function create_transaksi(Request $request)
+    public function create_transaksi(Request $request, $nip)
     {
         \App\Transaksi::create($request->all());
         return redirect('/transaksi');

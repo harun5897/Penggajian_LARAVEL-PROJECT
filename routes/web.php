@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/dashboard', 'AdminController@dashboard');
+Route::get('/dashboard', 'DashboardController@index');
 Route::get('/data_karyawan', 'AdminController@data_karyawan');
 Route::get('/data_gaji', 'AdminController@data_gaji');
 Route::get('/transaksi', 'AdminController@transaksi');
@@ -42,4 +42,6 @@ Route::post('kasbon/input', 'AdminController@kasbon_input');
 
 Route::get('transaksi/{nip}/edit', 'AdminController@transaksi_edit');
 
-Route::post('/transaksi/create', 'AdminController@create_transaksi');
+Route::post('/transaksi/{nip}/create', 'AdminController@create_transaksi');
+
+Route::get('manager', 'AdminController@manager');
