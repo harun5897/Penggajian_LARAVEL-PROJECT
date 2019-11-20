@@ -25,8 +25,10 @@
                     <tr>
                         <th>NIP</th>
                         <th>NAMA</th>
-                        <th>DIVISI</th>
                         <th>jABATAN</th>
+                        <th>TANGGAL</th>
+                        <th>LEMBUR</th>
+                        <th>ABSEN</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
@@ -35,9 +37,11 @@
                     <tr>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nama}}</td>
-                        <td>{{$karyawan->divisi}}</td>
                         <td>{{$karyawan->jabatan}}</td>
-                        <td> <a href="/transaksi/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat </a></td>
+                        <td>{{$karyawan->tanggal_transaksi}}</td>
+                        <td>{{$karyawan->lembur}}</td>
+                        <td>{{$karyawan->absen}}</td>
+                        <td> <a href="/transaksi/{{$karyawan->id}}/invoice" class="btn btn-warning btn-md"> Ivoice </a></td>
                     </tr>
                     @endforeach
                 </tbody>

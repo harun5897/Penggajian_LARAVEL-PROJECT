@@ -18,6 +18,12 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
+            <a href="/transaksi/reset">
+                <button type="button" class="btn btn-danger">
+                    Reset All
+                </button>
+            </a>
+
         </div>
         <div class="card-body">
             <table id="example1" class="table table-bordered table-hover">
@@ -30,6 +36,7 @@
                         <th>GAJI POKOK</th>
                         <th>BPJS_KES</th>
                         <th>BPJS_KET</th>
+                        <th>STATUS</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
@@ -78,8 +85,33 @@
                             <span class="badge badge-danger">Belum Lengkap</span>
                             @endif
                         </td>
+
+                        <td>
+                            @if($karyawan->status_gaji == 'yes')
+                            <span class="badge badge-warning">succes</span>
+                            @endif
+                            @if($karyawan->status_gaji == 'no')
+                            <span class="badge badge-danger">pending</span>
+                            @endif
+                            @if($karyawan->status_gaji == NULL)
+                            <span class="badge badge-danger">pending</span>
+                            @endif
+                        </td>
                         <td> <a href="/gaji/{{$karyawan->nip}}/gaji" class="btn btn-warning btn-md"> Lihat
-                            </a></td>
+                            </a>
+                            @if($karyawan->status_gaji == 'no')
+                            <a href="/transaksi/{{$karyawan->nip}}/edit" class="btn btn-primary btn-md"> Hitung </a>
+                            @endif
+
+                            @if($karyawan->status_gaji == NULL)
+                            <a href="/transaksi/{{$karyawan->nip}}/edit" class="btn btn-primary btn-md"> Hitung </a>
+                            @endif
+
+                            @if($karyawan->status_gaji == 'yes')
+                            <a href="/transaksi/{{$karyawan->nip}}/reset" class="btn btn-danger btn-md"> Reset</a>
+                            @endif
+
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

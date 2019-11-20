@@ -48,6 +48,8 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
+                @if(auth()->user()->role == 'Staff')
+                @if(auth()->user()->divisi == 'accounting')
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="/adminlte/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -56,6 +58,19 @@
                         <a href="#" class="d-block">Admin</a>
                     </div>
                 </div>
+                @endif
+                @endif
+
+                @if(auth()->user()->role == 'Manager')
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="/adminlte/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Manager</a>
+                    </div>
+                </div>
+                @endif
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -70,7 +85,8 @@
                                 </p>
                             </a>
                         </li>
-
+                        @if(auth()->user()->role == 'Staff')
+                        @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_karyawan" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
@@ -79,7 +95,11 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
+                        @endif
 
+                        @if(auth()->user()->role == 'Staff')
+                        @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_gaji" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -88,7 +108,11 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
+                        @endif
 
+                        @if(auth()->user()->role == 'Staff')
+                        @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_kasbon" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -97,7 +121,11 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
+                        @endif
 
+                        @if(auth()->user()->role == 'Staff')
+                        @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
                             <a href="/transaksi" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -106,12 +134,34 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
+                        @endif
 
+                        @if(auth()->user()->role == 'Manager')
                         <li class="nav-item">
                             <a href="/laporan" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>
                                     Laporan
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>
+                                    Data Gaji
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/logout" class="nav-link">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>
+                                    Logout
                                 </p>
                             </a>
                         </li>
@@ -226,7 +276,14 @@
 
             }).change();
 
+            // //code java script khusus kalender untuk cetak laporan
+            // $('#tgl_awal').datepicker({
+            //     altFormat: "dd MM yy",
+            //     changeMonth: true,
+            //     changeYear: true
+            // });
 
+            // $('tgl_awal').datepicker()
 
         });
     </script>

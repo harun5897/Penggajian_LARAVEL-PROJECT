@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Karyawan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -32,13 +33,14 @@ class AdminController extends Controller
 
     public function transaksi()
     {
-        $data_karyawan = \App\Karyawan::all();
+        $data_karyawan = \App\Transaksi::all();
         return view('admin.transaksi', ['data_karyawan' => $data_karyawan]);
     }
 
     public function laporan()
     {
-        return view('admin.laporan');
+        $data_laporan = \App\Transaksi::all();
+        return view('admin.laporan', ['data_laporan' => $data_laporan]);
     }
 
     public function update_karyawan()
@@ -54,7 +56,29 @@ class AdminController extends Controller
 
     public function create(Request $request)
     {
-        \App\Karyawan::create($request->all());
+
+        $user = new \App\User;
+        $user->role = 'Operator';
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->password = bcrypt('1234');
+        $user->save();
+
+        $karyawan = new \App\Karyawan;
+        $karyawan->user_id = $user->id;
+        $karyawan->nik = $request->nik;
+        $karyawan->nama = $request->nama;
+        $karyawan->tempat_lahir = $request->tempat_lahir;
+        $karyawan->tanggal_lahir = $request->tanggal_lahir;
+        $karyawan->tanggal_join = $request->tanggal_join;
+        $karyawan->jenis_kelamin = $request->jenis_kelamin;
+        $karyawan->status = $request->status;
+        $karyawan->agama = $request->agama;
+        $karyawan->no_hp = $request->no_hp;
+        $karyawan->email = $request->email;
+        $karyawan->alamat = $request->alamat;
+        $karyawan->save();
+
         return redirect('/data_karyawan');
     }
 
@@ -71,10 +95,14 @@ class AdminController extends Controller
         return redirect('/data_karyawan');
     }
 
+
+    //delete bagus
     public function delete($nip)
     {
         $karyawan = \App\Karyawan::find($nip);
-        $karyawan->delete($karyawan);
+        $karyawan->delete();
+        $user = \App\User::find($karyawan->user_id);
+        $user->delete();
         return redirect('/data_karyawan');
     }
 
@@ -93,6 +121,11 @@ class AdminController extends Controller
     {
         $karyawan = \App\Karyawan::find($nip);
         $karyawan->update($request->all());
+
+        $user = \App\User::find($karyawan->user_id);
+        $user->role = $request->jabatan;
+        $user->divisi = $request->divisi;
+        $user->update();
         return redirect('/data_gaji');
     }
 
@@ -136,6 +169,68 @@ class AdminController extends Controller
     public function create_transaksi(Request $request, $nip)
     {
         \App\Transaksi::create($request->all());
+
+        $karyawan = \App\Karyawan::find($nip);
+
+        $kasbon = $karyawan->sisa_kasbon;
+        $kasbon = (int) $kasbon;
+        $potongan = (int) $request->potongan_perbulan;
+
+        $hasil = $kasbon - $potongan;
+        $hasil = (string) $hasil;
+
+        if ($hasil < 0) {
+            $hasil = '0';
+        }
+
+        $karyawan->status_gaji = 'yes';
+        $karyawan->sisa_kasbon = $hasil;
+        $karyawan->update();
+
         return redirect('/transaksi');
+    }
+
+    public function transaksi_reset1($nip)
+    {
+        $karyawan = \App\Karyawan::find($nip);
+        $karyawan->status_gaji = 'no';
+        $karyawan->update();
+        return redirect('/data_gaji');
+    }
+
+    public function transaksi_reset2()
+    {
+        DB::table('data_karyawan')->update(['status_gaji' => NULL]);
+
+
+        return redirect('/data_gaji');
+    }
+
+    public function invoice()
+    {
+
+        return view('admin.invoice');
+    }
+
+    public function invoice_cetak($id)
+    {
+        $karyawan = \App\Transaksi::find($id);
+        return view('admin.invoice', ['karyawan' => $karyawan]);
+    }
+
+    public function lap_manager()
+    {
+
+        return view('manager.laporan');
+    }
+
+    public function cetak_laporan(Request $request)
+    {
+        $tanggal_awal = $request->tanggal_awal;
+        $tanggal_akhir = $request->tanggal_akhir;
+
+        $cari = mysql_query("select * from transaksi where tanggal_transaksi between '$tanggal_awal' and '$tanggal_akhir'");
+
+        return redirect('/lap_manager', ['cari' => $cari]);
     }
 }
