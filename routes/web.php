@@ -51,15 +51,16 @@ Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:accountin
     Route::get('transaksi/reset', 'AdminController@transaksi_reset2');
 
     Route::post('/transaksi/{nip}/create', 'AdminController@create_transaksi');
-    Route::get('/transaksi/{id}/invoice', 'AdminController@invoice_cetak');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff']], function () {
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/laporan', 'AdminController@laporan');
     Route::post('/laporan/lap_manager', 'AdminController@cetak_laporan');
+    Route::get('/transaksi/{id}/invoice', 'AdminController@invoice_cetak');
 });
 
 Route::get('manager', 'AdminController@manager');
 Route::get('/invoice', 'AdminController@invoice');
 Route::get('/lap_manager', 'AdminController@lap_manager');
+Route::get('/gaji_karyawan', 'AdminController@gaji_karyawan');

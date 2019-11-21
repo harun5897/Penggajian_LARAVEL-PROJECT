@@ -149,7 +149,7 @@
                         @endif
 
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="/gaji_karyawan" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>
                                     Data Gaji

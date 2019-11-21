@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -234,5 +235,13 @@ class AdminController extends Controller
         return view('manager.laporan', ['cari' => $cari]);
 
         return redirect('/lap_manager', ['cari' => $cari]);
+    }
+
+    public function gaji_karyawan()
+    {
+        $nip = Auth::user()->nip;
+        $data = \App\Transaksi::all()->where('nip', $nip);
+
+        return view('karyawan.gaji_karyawan', ['data' => $data]);
     }
 }
