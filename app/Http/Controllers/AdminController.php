@@ -80,6 +80,10 @@ class AdminController extends Controller
         $karyawan->alamat = $request->alamat;
         $karyawan->save();
 
+        $user = \App\User::find($user->id);
+        $user->nip = $karyawan->nip;
+        $user->update();
+
         return redirect('/data_karyawan');
     }
 
@@ -243,5 +247,15 @@ class AdminController extends Controller
         $data = \App\Transaksi::all()->where('nip', $nip);
 
         return view('karyawan.gaji_karyawan', ['data' => $data]);
+    }
+
+    public function ganti_password(Request $request)
+    {
+        $password = $request->password;
+        $id = Auth::user()->id;
+        $user = \App\User::find($id);
+        $user->password = bcrypt($password);
+        $user->update();
+        return redirect('/dashboard');
     }
 }

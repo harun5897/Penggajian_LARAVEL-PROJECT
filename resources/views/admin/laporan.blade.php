@@ -18,16 +18,9 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <form role="form" action="/laporan/lap_manager" method="POST">
-                {{csrf_field()}}
-                <label for="">Tanggal Awal</label>
-                <input name="tanggal_awal" type="date" class="form-control" placeholder="Enter ...">
-
-                <label for="">Tanggal Akhir</label>
-                <input name="tanggal_akhir" type="date" class="form-control" placeholder="Enter ...">
-
-                <button type="submit" class="btn btn-primary">Simpan <i class="fas fa-save"></i></button>
-            </form>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
+                Cetak Laporan
+            </button>
         </div>
         <div class="card-body">
             <table id="example1" class="table table-bordered table-hover">
@@ -73,6 +66,36 @@
         <!-- /.card-footer-->
     </div>
     <!-- /.card -->
+
+
+    <!-- modal -->
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title">Cetak Laporan</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form role="form" action="/laporan/lap_manager" method="POST">
+                        {{csrf_field()}}
+                        <label for="">Tanggal Awal</label>
+                        <input name="tanggal_awal" type="date" class="form-control" placeholder="Enter ...">
+
+                        <label for="">Tanggal Akhir</label>
+                        <input name="tanggal_akhir" type="date" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="submit" class="btn btn-primary"> Cetak</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
 </section>
 <!-- /.content -->

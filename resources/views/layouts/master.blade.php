@@ -158,6 +158,15 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="" class="nav-link" data-toggle="modal" data-target="#modal-default1">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>
+                                    change password
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="/logout" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>
@@ -184,6 +193,35 @@
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
+
+
+        <!-- modal -->
+        <div class="modal fade" id="modal-default1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h4 class="modal-title">Ganti Password</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" action="/ganti_password" method="POST">
+                            {{csrf_field()}}
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input name="password" type="text" class="form-control" placeholder="Enter ...">
+                            </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="submit" class="btn btn-warning">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
     </div>
     <!-- ./wrapper -->
 
