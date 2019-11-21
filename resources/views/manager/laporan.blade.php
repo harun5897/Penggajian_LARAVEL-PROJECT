@@ -43,8 +43,6 @@
     <section class="sheet padding-10mm">
         <h1>LAPORAN DATA TRANSAKSI GAJI KARYAWAN</h1>
 
-        {{dd($cari)}}
-
         <table class="table">
             <thead>
                 <tr>
@@ -57,15 +55,16 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($cari as $cari)
                 <tr>
-                    <td class="text-center" width="20">1</td>
-                    <td>Universitas Gadjah Mada</td>
-                    <td>Sleman, Yogyakarta</td>
-                    <td>Universitas Gadjah Mada</td>
-                    <td>Sleman, Yogyakarta</td>
-                    <td>Universitas Gadjah Mada</td>
+                    <td class="text-center" width="20">{{$cari->nip}}</td>
+                    <td>{{$cari->nama}}</td>
+                    <td>{{$cari->jabatan}}</td>
+                    <td>{{$cari->tanggal_transaksi}}</td>
+                    <td>{{$cari->gaji_pokok}}</td>
+                    <td>{{$cari->total_gaji}}</td>
                 </tr>
-
+                @endforeach
             </tbody>
         </table>
     </section>

@@ -226,10 +226,12 @@ class AdminController extends Controller
 
     public function cetak_laporan(Request $request)
     {
-        $tanggal_awal = $request->tanggal_awal;
-        $tanggal_akhir = $request->tanggal_akhir;
+        //code untuk filter berdasarkan range
 
-        $cari = mysql_query("select * from transaksi where tanggal_transaksi between '$tanggal_awal' and '$tanggal_akhir'");
+        $cari = \App\Transaksi::all()->where('tanggal_transaksi', '>=', $request->tanggal_awal)->where('tanggal_transaksi', '<=', $request->tanggal_akhir);
+
+        // $cari = \App\Transaksi::whereBetween('tanggal_transaksi', [$request->tanggal_awal, $request->tanggal_akhir])->get();
+        return view('manager.laporan', ['cari' => $cari]);
 
         return redirect('/lap_manager', ['cari' => $cari]);
     }
