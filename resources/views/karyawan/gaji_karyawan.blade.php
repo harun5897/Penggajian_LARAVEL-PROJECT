@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h3>Gaji</h3>
+                <h3>Data Gaji</h3>
             </div>
         </div>
     </div><!-- /.container-fluid -->

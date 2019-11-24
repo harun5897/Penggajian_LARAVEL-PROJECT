@@ -41,7 +41,7 @@
 
 <body class="A4">
     <section class="sheet padding-10mm">
-        <h1>LAPORAN DATA TRANSAKSI GAJI KARYAWAN</h1>
+        <h1>LAPORAN PENGGAJIAN KARYAWAN</h1>
 
         <table class="table">
             <thead>
@@ -51,6 +51,9 @@
                     <th>JABATAN</th>
                     <th>TANGGAL</th>
                     <th>GAJI POKOK</th>
+                    <th>ABSEN</th>
+                    <th>POT_KASBON</th>
+                    <th>LEMBUR</th>
                     <th>TOTAL GAJI</th>
                 </tr>
             </thead>
@@ -62,6 +65,9 @@
                     <td>{{$cari->jabatan}}</td>
                     <td>{{$cari->tanggal_transaksi}}</td>
                     <td>{{$cari->gaji_pokok}}</td>
+                    <td>{{$cari->absen}}</td>
+                    <td>{{$cari->potongan_perbulan}}</td>
+                    <td>{{$cari->lembur}}</td>
                     <td>{{$cari->total_gaji}}</td>
                 </tr>
                 @endforeach

@@ -104,7 +104,7 @@
                             <a href="/data_gaji" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Data Gaji
+                                    Data Gaji Karyawan
                                 </p>
                             </a>
                         </li>
@@ -260,15 +260,18 @@
                 $('#sisa_kasbon').val(Math.round(jumlah_kasbon));
             });
 
-            $('#gaji_pokok').keyup(function() {
-                var gaji_pokok = parseInt($('#gaji_pokok').val());
+            // $('#gaji_pokok').on('keyup', function() {
+            //     var gaji_pokok = parseInt($('#gaji_pokok').val());
+            //     // var gaji_pokok = parseInt('2769754');
+            //     var bpjs_kt = gaji_pokok * 2 / 100;
+            //     var bpjs_kes = gaji_pokok * 1 / 100;
 
-                var bpjs_kt = gaji_pokok * 1 / 100;
-                var bpjs_kes = gaji_pokok * 3 / 100;
+            //     // var bpjs_kt = gaji_pokok * 2 / 100;
+            //     // var bpjs_kes = gaji_pokok * 1 / 100;
 
-                $('#bpjs_kt').val(Math.round(bpjs_kt));
-                $('#bpjs_kes').val(Math.round(bpjs_kes));
-            });
+            //     $('#bpjs_kt').val(Math.round(bpjs_kt));
+            //     $('#bpjs_kes').val(Math.round(bpjs_kes));
+            // });
 
             $('#absen').keyup(function() {
                 var gaji_pokok = parseInt($('#gaji_pokok').val());
@@ -280,11 +283,11 @@
                 var bpjs_kt = parseInt($('#bpjs_kt').val());
                 var potongan_perbulan = parseInt($('#potongan_perbulan').val());
 
-                var harga_gaji = gaji_pokok / 30;
-                var harga_lembur = 20000 * lembur;
-                var harga_absen = harga_gaji * absen;
+                // var harga_gaji = gaji_pokok / 30;
+                var harga_lembur = 14425 * lembur;
+                var harga_absen = 115406 * absen;
 
-                var total_gaji = gaji_pokok + harga_lembur + tnj_jabatan + tnj_lama_kerja - absen - bpjs_kt - bpjs_kes - potongan_perbulan;
+                var total_gaji = gaji_pokok + harga_lembur + tnj_jabatan + tnj_lama_kerja - harga_absen - bpjs_kt - bpjs_kes - potongan_perbulan;
 
 
                 $('#total_gaji').val(Math.round(total_gaji));

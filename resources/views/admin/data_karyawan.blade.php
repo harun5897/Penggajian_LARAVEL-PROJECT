@@ -50,7 +50,9 @@
                         <td>{{$karyawan->tempat_lahir}}</td>
                         <td>{{$karyawan->jenis_kelamin}}</td>
                         <td>{{$karyawan->agama}}</td>
-                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat</a></td>
+                        <td> <a href="/data_karyawan/{{$karyawan->nip}}/edit" class="btn btn-warning btn-md"> Lihat</a>
+                            <a href="/data_karyawan/{{$karyawan->nip}}/delete" class="btn btn-danger">Hapus <i class="fas fa-trash"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

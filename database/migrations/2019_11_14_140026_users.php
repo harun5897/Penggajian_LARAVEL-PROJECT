@@ -15,6 +15,9 @@ class Users extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nip')->nullable();
+            $table->string('role')->nullable();
+            $table->string('divisi')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -22,6 +25,15 @@ class Users extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        //input user admin ke database
+        $user = new \App\User;
+        $user->role = 'Staff';
+        $user->name = 'admin';
+        $user->email = 'admin@gmail.com';
+        $user->divisi = 'accounting';
+        $user->password = bcrypt('1234');
+        $user->save();
     }
 
     /**

@@ -14,7 +14,9 @@ class CreateDataKaryawan extends Migration
     public function up()
     {
         Schema::create('data_karyawan', function (Blueprint $table) {
+            //tabel data karyawan
             $table->integerIncrements('nip');
+            $table->string('user_id')->nullable();
             $table->string('nik');
             $table->string('nama');
             $table->string('tempat_lahir');
@@ -26,22 +28,23 @@ class CreateDataKaryawan extends Migration
             $table->char('email');
             $table->char('alamat');
             $table->date('tanggal_join');
-            $table->string('lama_kerja');
-
-            $table->string('divisi');
-            $table->string('jabatan');
-            $table->string('gaji_pokok');
-            $table->string('tnj_jabatan');
-            $table->string('tnj_lama_kerja');
-            $table->string('bpjs_kes');
-            $table->string('bpjs_kt');
-
-            $table->date('tanggal_kasbon');
-            $table->string('jumlah_kasbon');
-            $table->string('masa_kasbon');
-            $table->string('potongan_perbulan');
-            $table->string('sisa_kasbon');
-            $table->string('status_kasbon');
+            $table->string('lama_kerja')->nullable();
+            //tabel data gaji
+            $table->string('divisi')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('gaji_pokok')->nullable();
+            $table->string('tnj_jabatan')->nullable();
+            $table->string('tnj_lama_kerja')->nullable();
+            $table->string('bpjs_kes')->nullable();
+            $table->string('bpjs_kt')->nullable();
+            //tabel data kasbon
+            $table->date('tanggal_kasbon')->nullable();
+            $table->string('jumlah_kasbon')->nullable();
+            $table->string('masa_kasbon')->nullable();
+            $table->string('potongan_perbulan')->nullable();
+            $table->string('sisa_kasbon')->nullable();
+            $table->string('status_kasbon')->nullable();
+            $table->string('status_gaji')->nullable();
         });
     }
 

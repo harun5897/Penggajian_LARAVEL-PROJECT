@@ -17,24 +17,10 @@
 
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
-            <button type="" class="" data-toggle="modal" data-target="#modal-default">
-                Tambah Data
-            </button>
-
-        </div>
         <div class="card-body">
-            Start creating your amazing application!
+            <h1>Selamat Datang !!!</h1>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-            <form role="form" action="/data_gaji/harun_gaji" method="POST">
-                <button type="submit" class="btn btn-info">Simpan<i class="fas fa-edit"></i></button>
-            </form>
-            Footer
-        </div>
-        <!-- /.card-footer-->
     </div>
     <!-- /.card -->
 

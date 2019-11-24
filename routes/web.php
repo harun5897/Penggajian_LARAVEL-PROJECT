@@ -59,9 +59,9 @@ Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff']], function () 
     Route::post('/laporan/lap_manager', 'AdminController@cetak_laporan');
     Route::get('/transaksi/{id}/invoice', 'AdminController@invoice_cetak');
     Route::post('/ganti_password', 'AdminController@ganti_password');
+    Route::get('/gaji_karyawan', 'AdminController@gaji_karyawan');
 });
 
 Route::get('manager', 'AdminController@manager');
 Route::get('/invoice', 'AdminController@invoice');
 Route::get('/lap_manager', 'AdminController@lap_manager');
-Route::get('/gaji_karyawan', 'AdminController@gaji_karyawan');

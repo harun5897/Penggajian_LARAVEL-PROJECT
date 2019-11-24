@@ -105,8 +105,8 @@ class AdminController extends Controller
     public function delete($nip)
     {
         $karyawan = \App\Karyawan::find($nip);
-        $karyawan->delete();
         $user = \App\User::find($karyawan->user_id);
+        $karyawan->delete();
         $user->delete();
         return redirect('/data_karyawan');
     }
@@ -245,7 +245,6 @@ class AdminController extends Controller
     {
         $nip = Auth::user()->nip;
         $data = \App\Transaksi::all()->where('nip', $nip);
-
         return view('karyawan.gaji_karyawan', ['data' => $data]);
     }
 
