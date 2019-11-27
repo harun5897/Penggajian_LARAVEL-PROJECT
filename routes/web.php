@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:accountin
     Route::post('/transaksi/{nip}/create', 'AdminController@create_transaksi');
 });
 
-Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff']], function () {
+Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff,Kasir,Operator']], function () {
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/laporan', 'AdminController@laporan');
     Route::post('/laporan/lap_manager', 'AdminController@cetak_laporan');
