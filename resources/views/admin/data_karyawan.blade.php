@@ -19,7 +19,7 @@
     <div class="card">
         <div class="card-header">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
-                Tambah Data
+            <b>Tambah Data</b>
             </button>
 
             <div class="card-tools">

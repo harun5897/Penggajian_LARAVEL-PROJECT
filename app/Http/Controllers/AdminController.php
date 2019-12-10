@@ -11,7 +11,12 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $karyawan = \App\Karyawan::all();
+        $karyawan_aktif = \App\Karyawan::count();
+        $total_karyawan = \App\Karyawan::all()->last();
+        $status_gaji = $karyawan->where('status_gaji', 'yes')->count();
+
+        return view('admin.dashboard', ['karyawan_aktif' => $karyawan_aktif, 'status_gaji' => $status_gaji, 'total_karyawan' => $total_karyawan]);
     }
 
     public function data_karyawan()
@@ -168,7 +173,7 @@ class AdminController extends Controller
     public function transaksi_edit($nip)
     {
         $karyawan = \App\Karyawan::find($nip);
-        return view('admin.hitung_transaksi', ['karyawan' => $karyawan]);
+        return view('admin.data_gaji', ['karyawan' => $karyawan]);
     }
 
     public function create_transaksi(Request $request, $nip)
@@ -205,7 +210,7 @@ class AdminController extends Controller
 
     public function transaksi_reset2()
     {
-        DB::table('data_karyawan')->update(['status_gaji' => NULL]);
+        DB::table('data_karyawan')->update(['status_gaji' => 'no']);
 
 
         return redirect('/data_gaji');

@@ -34,21 +34,36 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            <!-- Right navbar links -->
+
+            <ul class="navbar-nav ml-auto" <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user"> | {{auth()->user()->name}} </i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-default1">
+                            <i class="fas fa-lock mr-2"></i> Change Password
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item">
+                            <i class="fas fa-power-off mr-2"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </nav>
         <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
+            <a href="/dashboard" class="brand-link">
                 <img src="/adminlte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Payrol System</span>
+                <span class="brand-text font-weight-light"> <b>Aplikasi</b> Penggajian</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-                @if(auth()->user()->role == 'Staff')
+                <!-- @if(auth()->user()->role == 'Staff')
                 @if(auth()->user()->divisi == 'accounting')
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -59,9 +74,9 @@
                     </div>
                 </div>
                 @endif
-                @endif
+                @endif -->
 
-                @if(auth()->user()->role == 'Manager')
+                <!-- @if(auth()->user()->role == 'Manager')
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="/adminlte/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -70,7 +85,7 @@
                         <a href="#" class="d-block">Manager</a>
                     </div>
                 </div>
-                @endif
+                @endif -->
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -128,7 +143,7 @@
                         @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
                             <a href="/transaksi" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Transaksi
                                 </p>
@@ -150,31 +165,12 @@
 
                         <li class="nav-item">
                             <a href="/gaji_karyawan" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
+                                <i class="nav-icon fas fa-list-ol"></i>
                                 <p>
                                     Data Gaji
                                 </p>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="" class="nav-link" data-toggle="modal" data-target="#modal-default1">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    change password
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="/logout" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    Logout
-                                </p>
-                            </a>
-                        </li>
-
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

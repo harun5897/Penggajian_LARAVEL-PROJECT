@@ -116,7 +116,6 @@
                                 </div>
                                 <button type="submit" class="btn btn-info">Update <i class="fas fa-edit"></i></button>
                             </form>
-                            <a href="/data_karyawan/{{$karyawan->nip}}/delete" class="btn btn-danger">Hapus <i class="fas fa-trash"></i></a>
                         </div>
                         <!-- /.card-body -->
                     </div>

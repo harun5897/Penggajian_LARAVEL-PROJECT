@@ -18,86 +18,69 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-body">
-            <h1>Selamat Datang !!!</h1>
-        </div>
-        <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col-lg-4 col-4">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>{{$status_gaji}}</h3>
 
+                                <p>Status Gaji</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-4 col-4">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>{{$karyawan_aktif}}</h3>
 
-    <!-- modal -->
-    <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <h4 class="modal-title">Input Data Karyawan</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                                <p>Karyawan Aktif</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-4 col-4">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>{{$total_karyawan->user_id}}</h3>
+
+                                <p>Karyawan Terdaftar</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
                 </div>
-                <div class="modal-body">
-                    <form role="form" action="/karyawan/create" method="POST">
-                        {{csrf_field()}}
-                        <div class="form-group">
-                            <label for="">NIK</label>
-                            <input name="nik" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Nama</label>
-                            <input name="nama" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tempat Lahir</label>
-                            <input name="tempat_lahir" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tanggal Lahir</label>
-                            <input name="tanggal_lahir" type="date" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tanggal Kontrak</label>
-                            <input name="tanggal_join" type="date" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Jenis Kelamin</label>
-                            <select name="jenis_kelamin" class="form-control" id="">
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Status</label>
-                            <select name="status" class="form-control" id="">
-                                <option value="B">Belum Menikah</option>
-                                <option value="S">Menikah </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Agama</label>
-                            <input name="agama" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">No Telp</label>
-                            <input name="no_hp" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input name="email" type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="">alamat</label>
-                            <textarea name="alamat" class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                        </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="submit" class="btn btn-primary">Simpan <i class="fas fa-save"></i></button>
-                    </form>
-                </div>
+                <!-- /.row -->
             </div>
-            <!-- /.modal-content -->
+            <!-- /.card-body -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
+        <!-- /.card -->
+        <div class="card-header">
+
+            <center>
+                <h1> SISTEM INFORMASI GAJI KARYAWAN </h1>
+                <h3> PT. Pinang Lestari</h3>
+            </center>
+
+
+
+        </div>
+
+
 
 </section>
 <!-- /.content -->
