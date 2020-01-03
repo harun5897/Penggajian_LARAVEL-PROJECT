@@ -180,21 +180,33 @@
                 </td>
 
                 <td>
-                    {{$karyawan->lembur}} Jam
+                    {{$karyawan->lembur}} Jam | Rp.  {{$karyawan->harga_lembur}}
                 </td>
             </tr>
             <tr class="item">
                 <td>
-                    Absen
+                    Potongan Absen
                 </td>
 
                 <td>
-                    {{$karyawan->absen}} Hari
+                    {{$karyawan->absen}} Hari | Rp.  {{$karyawan->harga_absen}}
+                </td>
+            </tr>
+             <tr class="item">
+                <td>
+                    Potongan Kasbon
+                </td>
+
+                <td>
+                    Rp. {{$karyawan->potongan_kasbon}}
+                    @if($karyawan->potongan_kasbon == NULL)
+                    0
+                    @endif
                 </td>
             </tr>
             <tr class="item">
                 <td>
-                    Potongan Perbulan
+                    Total Potongan
                 </td>
 
                 <td>

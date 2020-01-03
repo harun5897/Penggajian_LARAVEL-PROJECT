@@ -28,6 +28,9 @@ class CreateTransaksi extends Migration
             $table->string('absen');
             $table->string('total_gaji');
             $table->string('potongan_perbulan');
+            $table->string('harga_lembur');
+            $table->string('harga_absen');
+            $table->string('potongan_kasbon');
             $table->timestamps();
         });
     }

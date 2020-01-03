@@ -17,10 +17,14 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="/adminlte/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
+
+    <link rel="stylesheet" href="/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="/adminlte/plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <!-- bootstrap
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -218,6 +222,9 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+
+
+
     </div>
     <!-- ./wrapper -->
 
@@ -235,6 +242,11 @@
     <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 
     <!-- page script -->
+
+    <script src="/adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="/adminlte/plugins/toastr/toastr.min.js"></script>
+<!-- AdminLTE App -->
     <script>
         $(function() {
             $("#example1").DataTable();
@@ -283,10 +295,15 @@
                 var harga_lembur = 14425 * lembur;
                 var harga_absen = 115406 * absen;
 
+                var total_potongan = potongan_perbulan + harga_absen;
+
                 var total_gaji = gaji_pokok + harga_lembur + tnj_jabatan + tnj_lama_kerja - harga_absen - bpjs_kt - bpjs_kes - potongan_perbulan;
 
 
                 $('#total_gaji').val(Math.round(total_gaji));
+                $('#harga_lembur').val(Math.round(harga_lembur));
+                $('#harga_absen').val(Math.round(harga_absen));
+                $('#potongan').val(Math.round(total_potongan));
             });
 
 

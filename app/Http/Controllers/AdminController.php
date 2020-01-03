@@ -173,7 +173,9 @@ class AdminController extends Controller
     public function transaksi_edit($nip)
     {
         $karyawan = \App\Karyawan::find($nip);
-        return view('admin.data_gaji', ['karyawan' => $karyawan]);
+        // dd($karyawan);
+        // return redirect('/data_gaji', ['karyawan' => $karyawan]);
+        // return redirect('', compact('karyawan'))->renderSections()['content'];
     }
 
     public function create_transaksi(Request $request, $nip)
@@ -181,7 +183,6 @@ class AdminController extends Controller
         \App\Transaksi::create($request->all());
 
         $karyawan = \App\Karyawan::find($nip);
-
         $kasbon = $karyawan->sisa_kasbon;
         $kasbon = (int) $kasbon;
         $potongan = (int) $request->potongan_perbulan;
