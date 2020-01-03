@@ -49,9 +49,8 @@
                                     <div class="col-sm-10">
                                         <select name="jabatan" class="form-control" id="jabatan">
                                             <option value="Manager" @if($karyawan->jabatan == 'Manager') selected @endif>Manager</option>
-                                            <option value="Kasir" @if($karyawan->jabatan == 'Kasir') selected @endif>Kasir</option>
                                             <option value="Staff" @if($karyawan->jabatan == 'Staff') selected @endif>Staff</option>
-                                            <option value="Operator" @if($karyawan->jabatan == 'Operator') selected @endif>Operator</option>
+                                            <option value="Kasir/Staff Gudang" @if($karyawan->jabatan == 'Kasir') selected @endif>Kasir/Staff Gudang</option>
                                         </select>
                                     </div>
                                 </div>

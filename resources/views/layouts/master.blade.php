@@ -293,7 +293,7 @@
 
                 // var harga_gaji = gaji_pokok / 30;
                 var harga_lembur = 14425 * lembur;
-                var harga_absen = 115406 * absen;
+                var harga_absen = 92325 * absen;
 
                 var total_potongan = potongan_perbulan + harga_absen;
 
@@ -312,20 +312,17 @@
                 //get value of selected option
                 var value = $(this).children("option:selected").attr('value');
                 var Manager = parseInt('500000');
-                var Kasir = parseInt('250000');
+                var Kasir = parseInt('100000');
                 var Staff = parseInt('250000');
-                var Operator = parseInt('100000');
 
 
                 // do something here
                 if (value == 'Manager') {
                     $('#tnj_jabatan').val(Math.round(Manager));
-                } else if (value == 'Kasir') {
+                } else if (value == 'Kasir/Staff Gudang') {
                     $('#tnj_jabatan').val(Math.round(Kasir));
                 } else if (value == 'Staff') {
                     $('#tnj_jabatan').val(Math.round(Staff));
-                } else if (value == 'Operator') {
-                    $('#tnj_jabatan').val(Math.round(Operator));
                 }
 
             }).change();
