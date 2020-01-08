@@ -23,6 +23,7 @@
             <table id="example1" class="table table-bordered table-hover">
                 <thead>
                     <tr>
+                        <th>NO</th>
                         <th>NIP</th>
                         <th>NAMA</th>
                         <th>jABATAN</th>
@@ -35,6 +36,7 @@
                 <tbody>
                     @foreach($data_karyawan as $karyawan)
                     <tr>
+                        <td>{{$karyawan->id}}</td>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nama}}</td>
                         <td>{{$karyawan->jabatan}}</td>

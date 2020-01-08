@@ -50,7 +50,7 @@
                                         <select name="jabatan" class="form-control" id="jabatan">
                                             <option value="Manager" @if($karyawan->jabatan == 'Manager') selected @endif>Manager</option>
                                             <option value="Staff" @if($karyawan->jabatan == 'Staff') selected @endif>Staff</option>
-                                            <option value="Kasir/Staff Gudang" @if($karyawan->jabatan == 'Kasir') selected @endif>Kasir/Staff Gudang</option>
+                                            <option value="Kasir/Staff Gudang" @if($karyawan->jabatan == 'Kasir/Staff Gudang') selected @endif>Kasir/Staff Gudang</option>
                                         </select>
                                     </div>
                                 </div>

@@ -78,7 +78,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="">NIP</label>
-                            <input name="nip" type="text" class="form-control" placeholder="NIP">
+                            <input name="nip" type="number" class="form-control" placeholder="NIP">
                         </div>
                         <div class="form-group">
                             <label for="">Nama</label>
@@ -86,12 +86,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">Jumlah Kasbon</label>
-                            <input name="jumlah_kasbon" id="jumlah_kasbon" type="text" class="form-control" placeholder="Rupiah">
+                            <input name="jumlah_kasbon" id="jumlah_kasbon" type="number" class="form-control" placeholder="Rupiah">
                         </div>
 
                         <div class="form-group">
                             <label for="">Masa Kasbon</label>
-                            <input name="masa_kasbon" id="masa_kasbon" type="text" class="form-control" placeholder="Bulan">
+                            <input name="masa_kasbon" id="masa_kasbon" type="number" class="form-control" placeholder="Bulan">
                         </div>
                         <div class="form-group">
                             <label for="">Perbulan</label>
@@ -110,7 +110,7 @@
                         </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="submit" class="btn btn-primary">Simpan <i class="fas fa-save"></i></button>
+                    <button type="submit" class="btn btn-primary">Simpan </button>
                     </form>
                 </div>
             </div>

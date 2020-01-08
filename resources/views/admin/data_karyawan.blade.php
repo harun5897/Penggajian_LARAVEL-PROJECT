@@ -43,6 +43,7 @@
                 </thead>
                 <tbody>
                     @foreach($data_karyawan as $karyawan)
+                    {{dd($karyawan)}}
                     <tr>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nik}}</td>
@@ -73,7 +74,7 @@
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="">NIK</label>
-                                <input name="nik" type="text" class="form-control" placeholder="Enter ...">
+                                <input name="nik" type="number" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
                                 <label for="">Nama</label>
@@ -111,11 +112,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="">No Telp</label>
-                                <input name="no_hp" type="text" class="form-control" placeholder="Enter ...">
+                                <input name="no_hp" type="number" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input name="email" type="text" class="form-control" placeholder="Enter ...">
+                                <input name="email" type="email" class="form-control" placeholder="Enter ...">
                             </div>
                             <div class="form-group">
                                 <label for="">alamat</label>

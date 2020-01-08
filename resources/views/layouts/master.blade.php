@@ -120,10 +120,10 @@
                         @if(auth()->user()->role == 'Staff')
                         @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
-                            <a href="/data_gaji" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                            <a href="/data_kasbon" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Data Gaji Karyawan
+                                    Kasbon
                                 </p>
                             </a>
                         </li>
@@ -133,10 +133,10 @@
                         @if(auth()->user()->role == 'Staff')
                         @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
-                            <a href="/data_kasbon" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                            <a href="/data_gaji" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Kasbon
+                                    Data Gaji Karyawan
                                 </p>
                             </a>
                         </li>
@@ -336,13 +336,37 @@
 
             // $('tgl_awal').datepicker()
 
+            //Jquery untuk hitung di modal dan edit data
+            $('#hitung').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget)
+                var nip = button.data('nip')
+                var nama = button.data('nama')
+                var jabatan = button.data('jabatan')
+                var gaji_pokok = button.data('gaji_pokok')
+                var tnj_jabatan = button.data('tnj_jabatan')
+                var tnj_lama_kerja = button.data('tnj_lama_kerja')
+                var bpjs_kt = button.data('bpjs_kt')
+                var bpjs_kes = button.data('bpjs_kes')
+                var potongan_perbulan = button.data('potongan_perbulan')
+
+
+                var modal = $(this)
+                // modal.find('.modal-title').text('new message to ' + recipient )
+                modal.find('.modal-body #nip').val(nip)
+                modal.find('.modal-body #nama').val(nama)
+                modal.find('.modal-body #jabatan').val(jabatan)
+                modal.find('.modal-body #gaji_pokok').val(gaji_pokok)
+                modal.find('.modal-body #tnj_jabatan').val(tnj_jabatan)
+                modal.find('.modal-body #tnj_lama_kerja').val(tnj_lama_kerja)
+                modal.find('.modal-body #bpjs_kt').val(bpjs_kt)
+                modal.find('.modal-body #bpjs_kes').val(bpjs_kes)
+                modal.find('.modal-body #potongan_perbulan').val(potongan_perbulan)
+            })
+
+
         });
     </script>
 
-    <!-- jQuery bootstrap
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

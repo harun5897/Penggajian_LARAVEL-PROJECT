@@ -180,9 +180,10 @@ class AdminController extends Controller
 
     public function create_transaksi(Request $request, $nip)
     {
+        //memasukan hasil transaksi ke database
         \App\Transaksi::create($request->all());
-
-        $karyawan = \App\Karyawan::find($nip);
+        //menghitung jumlah kasbon dan di update ke tabel data_karyawan
+        $karyawan = \App\Karyawan::find($request->nip);
         $kasbon = $karyawan->sisa_kasbon;
         $kasbon = (int) $kasbon;
         $potongan = (int) $request->potongan_perbulan;
@@ -197,6 +198,15 @@ class AdminController extends Controller
         $karyawan->status_gaji = 'yes';
         $karyawan->sisa_kasbon = $hasil;
         $karyawan->update();
+
+        $karyawan = \App\Karyawan::find($request->nip);
+        if ($hasil == 0) {
+            $karyawan->status_kasbon = 'no';
+            $karyawan->masa_kasbon = '0';
+            $karyawan->potongan_perbulan = '0';
+            $karyawan->jumlah_kasbon = '0';
+            $karyawan->update();
+        }
 
         return redirect('/transaksi');
     }
