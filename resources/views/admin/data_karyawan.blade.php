@@ -43,7 +43,6 @@
                 </thead>
                 <tbody>
                     @foreach($data_karyawan as $karyawan)
-                    {{dd($karyawan)}}
                     <tr>
                         <td>{{$karyawan->nip}}</td>
                         <td>{{$karyawan->nik}}</td>

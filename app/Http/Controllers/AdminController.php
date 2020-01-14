@@ -83,6 +83,7 @@ class AdminController extends Controller
         $karyawan->no_hp = $request->no_hp;
         $karyawan->email = $request->email;
         $karyawan->alamat = $request->alamat;
+        $karyawan->potongan_perbulan = 0;
         $karyawan->save();
 
         $user = \App\User::find($user->id);
@@ -172,10 +173,7 @@ class AdminController extends Controller
 
     public function transaksi_edit($nip)
     {
-        $karyawan = \App\Karyawan::find($nip);
-        // dd($karyawan);
-        // return redirect('/data_gaji', ['karyawan' => $karyawan]);
-        // return redirect('', compact('karyawan'))->renderSections()['content'];
+
     }
 
     public function create_transaksi(Request $request, $nip)

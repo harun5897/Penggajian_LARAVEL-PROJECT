@@ -41,6 +41,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                @if(!$data_karyawan)
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                @endif
                     @foreach($data_karyawan as $karyawan)
                     <tr>
                         <td>{{$karyawan->nip}}</td>

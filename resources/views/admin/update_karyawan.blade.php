@@ -27,7 +27,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>NIK</label>
-                                            <input name="nik" type="text" class="form-control" placeholder="Enter ..." value="{{$karyawan->nik}}">
+                                            <input name="nik" type="number" class="form-control" placeholder="Enter ..." value="{{$karyawan->nik}}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -83,7 +83,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>No Hp</label>
-                                            <input name="no_hp" type="text" class="form-control" placeholder="Enter ..." value="{{$karyawan->no_hp}}">
+                                            <input name="no_hp" type="number" class="form-control" placeholder="Enter ..." value="{{$karyawan->no_hp}}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">

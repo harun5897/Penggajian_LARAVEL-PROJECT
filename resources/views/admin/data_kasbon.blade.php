@@ -85,6 +85,10 @@
                             <input name="nama" type="text" class="form-control" placeholder="Nama">
                         </div>
                         <div class="form-group">
+                            <label for="">Tanggal Kasbon</label>
+                            <input name="tanggal_kasbon" type="date" class="form-control" placeholder="Enter ...">
+                        </div>
+                        <div class="form-group">
                             <label for="">Jumlah Kasbon</label>
                             <input name="jumlah_kasbon" id="jumlah_kasbon" type="number" class="form-control" placeholder="Rupiah">
                         </div>
