@@ -111,8 +111,11 @@
                                                 <option value="500000" @if($karyawan->tnj_lama_kerja == '500000') selected @endif> 5 Tahun +
                                                 </option>
                                             </select>
+                                            <br>
+                                        <a href="/ResetPass/{{$karyawan->user_id}}" class="btn btn-warning"> Reset Password <i class="fas fa-edit"></i></a>
                                         </div>
                                     </div>
+
                                 </div>
                                 <button type="submit" class="btn btn-info">Update <i class="fas fa-edit"></i></button>
                             </form>

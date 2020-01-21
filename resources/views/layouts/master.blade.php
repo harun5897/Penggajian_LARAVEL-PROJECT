@@ -25,6 +25,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -120,10 +122,10 @@
                         @if(auth()->user()->role == 'Staff')
                         @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
-                            <a href="/data_kasbon" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                            <a href="/data_gaji" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Kasbon
+                                    Data Gaji Karyawan
                                 </p>
                             </a>
                         </li>
@@ -133,10 +135,10 @@
                         @if(auth()->user()->role == 'Staff')
                         @if(auth()->user()->divisi == 'accounting')
                         <li class="nav-item has-treeview">
-                            <a href="/data_gaji" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                            <a href="/data_kasbon" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Data Gaji Karyawan
+                                    Kasbon
                                 </p>
                             </a>
                         </li>
@@ -312,15 +314,15 @@
                 //get value of selected option
                 var value = $(this).children("option:selected").attr('value');
                 var Manager = parseInt('500000');
-                var Kasir = parseInt('100000');
+                var Operasional = parseInt('100000');
                 var Staff = parseInt('250000');
 
 
                 // do something here
                 if (value == 'Manager') {
                     $('#tnj_jabatan').val(Math.round(Manager));
-                } else if (value == 'Kasir/Staff Gudang') {
-                    $('#tnj_jabatan').val(Math.round(Kasir));
+                } else if (value == 'Operasional') {
+                    $('#tnj_jabatan').val(Math.round(Operasional));
                 } else if (value == 'Staff') {
                     $('#tnj_jabatan').val(Math.round(Staff));
                 }
@@ -348,8 +350,6 @@
                 var bpjs_kt = button.data('bpjs_kt')
                 var bpjs_kes = button.data('bpjs_kes')
                 var potongan_perbulan = button.data('potongan_perbulan')
-
-
                 var modal = $(this)
                 // modal.find('.modal-title').text('new message to ' + recipient )
                 modal.find('.modal-body #nip').val(nip)
@@ -363,9 +363,12 @@
                 modal.find('.modal-body #potongan_perbulan').val(potongan_perbulan)
             })
 
-
         });
+
+
+
     </script>
+
 
 </body>
 

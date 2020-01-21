@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
+
+    @if ($message = Session::get('error'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Gagal untuk login, coba cek email dan password anda !!!! </strong>
+    </div>
+    @endif
+
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">

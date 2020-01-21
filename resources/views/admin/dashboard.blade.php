@@ -2,7 +2,21 @@
 
 @section('content')
 <!-- Content Header (Page header) -->
+
 <section class="content-header">
+@if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Berhasil Login</strong>
+    </div>
+@endif
+
+@if ($message = Session::get('password'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Password berhasil di reset !!!</strong>
+    </div>
+@endif
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -14,7 +28,6 @@
 
 <!-- Main content -->
 <section class="content">
-
     <!-- Default box -->
     <div class="card">
         <div class="card-body">
@@ -75,8 +88,6 @@
                 <h1> SISTEM INFORMASI GAJI KARYAWAN </h1>
                 <h3> PT. Pinang Lestari</h3>
             </center>
-
-
 
         </div>
 

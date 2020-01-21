@@ -83,6 +83,7 @@
                                 <label for="">Tempat Lahir</label>
                                 <input name="tempat_lahir" type="text" class="form-control" placeholder="Enter ...">
                             </div>
+
                             <div class="form-group">
                                 <label for="">Tanggal Lahir</label>
                                 <input name="tanggal_lahir" type="date" class="form-control" placeholder="Enter ...">

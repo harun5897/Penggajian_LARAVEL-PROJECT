@@ -213,15 +213,22 @@
                     Rp. {{$karyawan->potongan_perbulan}}
                 </td>
             </tr>
-            <tr class="total">
+
+            <!-- <tr class="total">
                 <td>
                 </td>
 
                 <td>
                     Rp. {{$karyawan->total_gaji}}
                 </td>
-            </tr>
+            </tr> -->
+
         </table>
+
+            <div>
+                    <h4 style='text-align:right'>  Rp. {{$karyawan->total_gaji}}</h4>
+            </div>
+
     </div>
     <script type="text/javascript">
         window.addEventListener("load", window.print());

@@ -13,10 +13,12 @@ class AuthController extends Controller
 
     public function postmasuk(Request $request)
     {
+        $notif = 'sukses';
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with(['success' => 'Pesan Berhasil']);
+
         }
-        return redirect('/masuk');
+        return redirect('/masuk')->with(['error' => 'Pesan Berhasil']);
     }
 
     public function logout()

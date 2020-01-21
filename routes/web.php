@@ -51,9 +51,11 @@ Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:accountin
     Route::get('transaksi/reset', 'AdminController@transaksi_reset2');
 
     Route::post('/transaksi/{nip}/create', 'AdminController@create_transaksi');
+
+    Route::get('/ResetPass/{user_id}', 'AdminController@ResetPass');
 });
 
-Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff,Kasir,Operator']], function () {
+Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff,Operasional']], function () {
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/laporan', 'AdminController@laporan');
     Route::post('/laporan/lap_manager', 'AdminController@cetak_laporan');

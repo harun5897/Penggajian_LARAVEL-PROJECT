@@ -184,7 +184,7 @@ class AdminController extends Controller
         $karyawan = \App\Karyawan::find($request->nip);
         $kasbon = $karyawan->sisa_kasbon;
         $kasbon = (int) $kasbon;
-        $potongan = (int) $request->potongan_perbulan;
+        $potongan = (int) $request->potongan_kasbon;
 
         $hasil = $kasbon - $potongan;
         $hasil = (string) $hasil;
@@ -270,5 +270,14 @@ class AdminController extends Controller
         $user->password = bcrypt($password);
         $user->update();
         return redirect('/dashboard');
+    }
+
+    public function ResetPass($user_id)
+    {
+        $id = $user_id;
+        $user = \App\User::find($id);
+        $user->password = bcrypt('1234');
+        $user->update();
+        return redirect('/dashboard')->with(['password' => 'Pesan Berhasil']);
     }
 }
