@@ -33,7 +33,8 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/postmasuk"><b>Aplikasi </b> Penggajian</a>
+            <a href="/postmasuk"><b>Sistem Informasi Penggajian </b></a>
+            <h4> PT. Pinang Lestari</h4>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
