@@ -63,8 +63,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="/adminlte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light"> <b>Aplikasi</b> Penggajian</span>
+                <!-- <img src="/adminlte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+                <span class="brand-text font-weight-light"> <b>Penggajian</b> Pinang Lestari</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">

@@ -104,9 +104,9 @@
                                             <label>Lama Kerja</label>
                                             <select name="tnj_lama_kerja" class="form-control" id="">
                                                 <option value="0" @if($karyawan->tnj_lama_kerja == NULL) selected @endif>0 Tahun</option>
-                                                <option value="100000" @if($karyawan->tnj_lama_kerja == '100000') selected @endif>1 Tahun
+                                                <option value="100000" @if($karyawan->tnj_lama_kerja == '100000') selected @endif>1 - 2 Tahun
                                                 </option>
-                                                <option value="300000" @if($karyawan->tnj_lama_kerja == '300000') selected @endif> 3 Tahun
+                                                <option value="300000" @if($karyawan->tnj_lama_kerja == '300000') selected @endif> 3 - 4 Tahun
                                                 </option>
                                                 <option value="500000" @if($karyawan->tnj_lama_kerja == '500000') selected @endif> 5 Tahun +
                                                 </option>
