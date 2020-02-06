@@ -38,19 +38,21 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Divisi</label>
+                                    <label class="col-sm-2 col-form-label">Jabatan</label>
                                     <div class="col-sm-10">
-                                        <input name="divisi" type="divisi" class="form-control" placeholder="Divisi" value="{{$karyawan->divisi}}">
+                                        <select name="jabatan" class="form-control" id="jabatan" onChange="random()">
+                                            <option value="Pimpinan" @if($karyawan->jabatan == 'Pimpinan') selected @endif>Pimpinan</option>
+                                            <option value="Staff" @if($karyawan->jabatan == 'Staff') selected @endif>Staff</option>
+                                            <option value="Operasional" @if($karyawan->jabatan == 'Operasional') selected @endif>Operasional</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Jabatan</label>
-                                    <div class="col-sm-10">
-                                        <select name="jabatan" class="form-control" id="jabatan">
-                                            <option value="Manager" @if($karyawan->jabatan == 'Manager') selected @endif>Manager</option>
-                                            <option value="Staff" @if($karyawan->jabatan == 'Staff') selected @endif>Staff</option>
-                                            <option value="Operasional" @if($karyawan->jabatan == 'Operasional') selected @endif>Operasional</option>
+                                    <label class="col-sm-2 col-form-label">Divisi</label>
+                                    <div class="col-sm-10" id='divisi'>
+                                        <select name="divisi" class="form-control">
+                                            <option></option>
                                         </select>
                                     </div>
                                 </div>

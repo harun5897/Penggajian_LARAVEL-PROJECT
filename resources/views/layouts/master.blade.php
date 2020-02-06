@@ -7,7 +7,6 @@
     <title>Penggajian</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -24,8 +23,6 @@
     <!-- Theme style -->
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-
 
 </head>
 
@@ -107,7 +104,7 @@
                             </a>
                         </li>
                         @if(auth()->user()->role == 'Staff')
-                        @if(auth()->user()->divisi == 'accounting')
+                        @if(auth()->user()->divisi == 'Accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_karyawan" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
@@ -120,7 +117,7 @@
                         @endif
 
                         @if(auth()->user()->role == 'Staff')
-                        @if(auth()->user()->divisi == 'accounting')
+                        @if(auth()->user()->divisi == 'Accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_gaji" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -133,7 +130,7 @@
                         @endif
 
                         @if(auth()->user()->role == 'Staff')
-                        @if(auth()->user()->divisi == 'accounting')
+                        @if(auth()->user()->divisi == 'Accounting')
                         <li class="nav-item has-treeview">
                             <a href="/data_kasbon" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -146,7 +143,7 @@
                         @endif
 
                         @if(auth()->user()->role == 'Staff')
-                        @if(auth()->user()->divisi == 'accounting')
+                        @if(auth()->user()->divisi == 'Accounting')
                         <li class="nav-item has-treeview">
                             <a href="/transaksi" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
@@ -158,7 +155,7 @@
                         @endif
                         @endif
 
-                        @if(auth()->user()->role == 'Manager')
+                        @if(auth()->user()->role == 'Pimpinan')
                         <li class="nav-item">
                             <a href="/laporan" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
@@ -248,6 +245,8 @@
     <script src="/adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- Toastr -->
 <script src="/adminlte/plugins/toastr/toastr.min.js"></script>
+
+
 <!-- AdminLTE App -->
     <script>
         $(function() {
@@ -313,14 +312,14 @@
 
                 //get value of selected option
                 var value = $(this).children("option:selected").attr('value');
-                var Manager = parseInt('500000');
+                var Pimpinan = parseInt('500000');
                 var Operasional = parseInt('100000');
                 var Staff = parseInt('250000');
 
 
                 // do something here
-                if (value == 'Manager') {
-                    $('#tnj_jabatan').val(Math.round(Manager));
+                if (value == 'Pimpinan') {
+                    $('#tnj_jabatan').val(Math.round(Pimpinan));
                 } else if (value == 'Operasional') {
                     $('#tnj_jabatan').val(Math.round(Operasional));
                 } else if (value == 'Staff') {
@@ -361,10 +360,44 @@
                 modal.find('.modal-body #bpjs_kt').val(bpjs_kt)
                 modal.find('.modal-body #bpjs_kes').val(bpjs_kes)
                 modal.find('.modal-body #potongan_perbulan').val(potongan_perbulan)
-            })
+            });
 
         });
 
+
+        function random(){
+
+            var a=document.getElementById('jabatan').value;
+
+            if(a==='Pimpinan')
+            {
+                var array=['HRD','Manager'];
+
+            }
+
+            else if(a==='Operasional')
+            {
+                var array=['Kasir','Gudang', 'Stand', 'Security'];
+            }
+
+            else if(a==='Staff')
+            {
+                var array=['Admin','Accounting'];
+            }
+
+            // else {
+
+            //     var array=[];
+            // }
+
+            var string="";
+            for(i=0;i<array.length;i++)
+            {
+                string=string+"<option>"+array[i]+"</option>";
+            }
+            string="<select name='divisi' class='form-control' value='+string+'>"+string+"</select>";
+            document.getElementById('divisi').innerHTML=string;
+        }
 
 
     </script>

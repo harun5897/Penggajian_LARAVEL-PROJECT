@@ -62,35 +62,44 @@ class AdminController extends Controller
 
     public function create(Request $request)
     {
+        $filter_nik = \App\Karyawan::where('nik','LIKE','%'.$request->nik. '%')->get();
 
-        $user = new \App\User;
-        $user->role = 'Operator';
-        $user->name = $request->nama;
-        $user->email = $request->email;
-        $user->password = bcrypt('1234');
-        $user->save();
+        $cek = (string) $filter_nik;
 
-        $karyawan = new \App\Karyawan;
-        $karyawan->user_id = $user->id;
-        $karyawan->nik = $request->nik;
-        $karyawan->nama = $request->nama;
-        $karyawan->tempat_lahir = $request->tempat_lahir;
-        $karyawan->tanggal_lahir = $request->tanggal_lahir;
-        $karyawan->tanggal_join = $request->tanggal_join;
-        $karyawan->jenis_kelamin = $request->jenis_kelamin;
-        $karyawan->status = $request->status;
-        $karyawan->agama = $request->agama;
-        $karyawan->no_hp = $request->no_hp;
-        $karyawan->email = $request->email;
-        $karyawan->alamat = $request->alamat;
-        $karyawan->potongan_perbulan = 0;
-        $karyawan->save();
+        if ($cek == '[]') {
 
-        $user = \App\User::find($user->id);
-        $user->nip = $karyawan->nip;
-        $user->update();
+            $user = new \App\User;
+            $user->role = 'Operator';
+            $user->name = $request->nama;
+            $user->email = $request->email;
+            $user->password = bcrypt('1234');
+            $user->save();
 
-        return redirect('/data_karyawan');
+            $karyawan = new \App\Karyawan;
+            $karyawan->user_id = $user->id;
+            $karyawan->nik = $request->nik;
+            $karyawan->nama = $request->nama;
+            $karyawan->tempat_lahir = $request->tempat_lahir;
+            $karyawan->tanggal_lahir = $request->tanggal_lahir;
+            $karyawan->tanggal_join = $request->tanggal_join;
+            $karyawan->jenis_kelamin = $request->jenis_kelamin;
+            $karyawan->status = $request->status;
+            $karyawan->agama = $request->agama;
+            $karyawan->no_hp = $request->no_hp;
+            $karyawan->email = $request->email;
+            $karyawan->alamat = $request->alamat;
+            $karyawan->potongan_perbulan = 0;
+            $karyawan->save();
+
+            $user = \App\User::find($user->id);
+            $user->nip = $karyawan->nip;
+            $user->update();
+
+            return redirect('/data_karyawan')->with(['cek_berhasil' => 'gagal']);
+        } else {
+            return redirect('/data_karyawan')->with(['data_ada' => 'gagal']);
+        }
+
     }
 
     public function edit($nip)
@@ -154,16 +163,63 @@ class AdminController extends Controller
 
     public function kasbon_update(Request $request, $nip)
     {
-        $karyawan = \App\Karyawan::find($nip);
-        $karyawan->update($request->all());
-        return redirect('/data_kasbon');
+        $karyawan = \App\Karyawan::find($request->nip);
+
+        if ($karyawan->jabatan == 'Pimipinan') {
+                if($request->jumlah_kasbon > 8000000) {
+                    return redirect('/data_kasbon')->with(['alert1' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
+        else if ($karyawan->jabatan == 'Staff') {
+                if($request->jumlah_kasbon > 5000000) {
+                    return redirect('/data_kasbon')->with(['alert2' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
+        else if ($karyawan->jabatan == 'Operasional') {
+                if($request->jumlah_kasbon > 3000000) {
+                    return redirect('/data_kasbon')->with(['alert3' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
     }
 
     public function kasbon_input(Request $request)
     {
         $karyawan = \App\Karyawan::find($request->nip);
-        $karyawan->update($request->all());
-        return redirect('/data_kasbon');
+
+        if ($karyawan->jabatan == 'Pimipinan') {
+                if($request->jumlah_kasbon > 8000000) {
+                    return redirect('/data_kasbon')->with(['alert1' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
+
+        else if ($karyawan->jabatan == 'Staff') {
+                if($request->jumlah_kasbon > 5000000) {
+                    return redirect('/data_kasbon')->with(['alert2' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
+        if ($karyawan->jabatan == 'Operasional') {
+                if($request->jumlah_kasbon > 3000000) {
+                    return redirect('/data_kasbon')->with(['alert3' => 'gagal']);
+                } else {
+                    $karyawan->update($request->all());
+                    return redirect('/data_kasbon');
+                }
+        }
     }
 
     public function hitung_transaksi()

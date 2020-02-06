@@ -21,7 +21,7 @@ Route::get('/logout', 'AuthController@logout');
 //login
 
 
-Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:accounting']], function () {
+Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:Accounting']], function () {
     // Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/data_karyawan', 'AdminController@data_karyawan');
     Route::get('/data_gaji', 'AdminController@data_gaji');
@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth', 'checkRole:Staff', 'checkDivisi:accountin
     Route::get('/ResetPass/{user_id}', 'AdminController@ResetPass');
 });
 
-Route::group(['middleware' => ['auth', 'checkRole:Manager,Staff,Operasional']], function () {
+Route::group(['middleware' => ['auth', 'checkRole:Pimpinan,Staff,Operasional']], function () {
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/laporan', 'AdminController@laporan');
     Route::post('/laporan/lap_manager', 'AdminController@cetak_laporan');

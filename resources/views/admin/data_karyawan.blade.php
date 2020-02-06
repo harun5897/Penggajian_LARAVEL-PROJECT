@@ -14,6 +14,19 @@
 
 <!-- Main content -->
 <section class="content">
+@if ($message = Session::get('data_ada'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Gagal !!! Nik yang anda input sudah terdaftar</strong>
+    </div>
+@endif
+
+@if ($message = Session::get('cek_berhasil'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Data Berhasil disimpan</strong>
+    </div>
+@endif
 
     <!-- Default box -->
     <div class="card">

@@ -14,6 +14,27 @@
 
 <!-- Main content -->
 <section class="content">
+@if ($message = Session::get('alert1'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Gagal input kasbon!!! Maximal kasbon jabatan pimpinan hanya 8 Jt</strong>
+    </div>
+@endif
+
+@if ($message = Session::get('alert2'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Gagal input kasbon!!! Maximal kasbon jabatan Staff hanya 5 Jt</strong>
+    </div>
+@endif
+
+@if ($message = Session::get('alert3'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Gagal input kasbon!!! Maximal kasbon jabatan Operasional hanya 3 Jt</strong>
+    </div>
+@endif
+
 
     <!-- Default box -->
     <div class="card">
