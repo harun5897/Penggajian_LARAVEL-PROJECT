@@ -31,7 +31,7 @@ class Users extends Migration
         $user->role = 'Staff';
         $user->name = 'admin';
         $user->email = 'admin@gmail.com';
-        $user->divisi = 'accounting';
+        $user->divisi = 'Accounting';
         $user->password = bcrypt('1234');
         $user->save();
     }

@@ -77,7 +77,14 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Agama</label>
-                                            <input name="agama" type="text" class="form-control" placeholder="Enter ..." value="{{$karyawan->agama}}">
+                                            <select name="agama" class="form-control" id="">
+                                                <option value="islam" @if($karyawan->agama == 'islam') selected @endif>Islam</option>
+                                                <option value="protestan" @if($karyawan->agama == 'protestan') selected @endif>Protestan</option>
+                                                <option value="katolik" @if($karyawan->agama == 'katolik') selected @endif>Katolik</option>
+                                                <option value="hindu" @if($karyawan->agama == 'hindu') selected @endif>Hindu</option>
+                                                <option value="buddha" @if($karyawan->agama == 'buddha') selected @endif>Buddha</option>
+                                                <option value="kong hu cu" @if($karyawan->agama == 'kong hu cu') selected @endif>Kong Hu Cu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">

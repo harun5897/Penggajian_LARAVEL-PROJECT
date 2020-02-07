@@ -60,7 +60,7 @@
                                 <div class=" form-group row">
                                     <label class="col-sm-2 col-form-label">Gaji Pokok</label>
                                     <div class="col-sm-10">
-                                        <input name="gaji_pokok" id="gaji_pokok" type="gajipokok" class="form-control" placeholder="Gaji Pokok" value="2769754" readonly>
+                                        <input name="gaji_pokok" id="gaji_pokok" type="gajipokok" class="form-control" placeholder="Gaji Pokok" value="2771825" readonly>
                                     </div>
                                 </div>
 
@@ -82,14 +82,14 @@
                                 <div class=" form-group row">
                                     <label class="col-sm-2 col-form-label">BPJS KES</label>
                                     <div class="col-sm-10">
-                                        <input name="bpjs_kes" id="bpjs_kes" type="bpjskes" class="form-control" placeholder="Bpjs Kes" value="27698" readonly>
+                                        <input name="bpjs_kes" id="bpjs_kes" type="bpjskes" class="form-control" placeholder="Bpjs Kes" value="27718" readonly>
                                     </div>
                                 </div>
 
                                 <div class=" form-group row">
                                     <label class="col-sm-2 col-form-label">BPJS KT</label>
                                     <div class="col-sm-10">
-                                        <input name="bpjs_kt" id="bpjs_kt" type="text" class="form-control" placeholder="Rupiah" value="55395" readonly>
+                                        <input name="bpjs_kt" id="bpjs_kt" type="text" class="form-control" placeholder="Rupiah" value="55.437" readonly>
                                     </div>
                                 </div>
 

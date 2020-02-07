@@ -121,7 +121,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Agama</label>
-                                <input name="agama" type="text" class="form-control" placeholder="Enter ...">
+                                <select name="agama" class="form-control" id="">
+                                    <option value="islam"> Islam</option>
+                                    <option value="protestan"> Protestan</option>
+                                    <option value="katolik">Katolik</option>
+                                    <option value="hindu"> Hindu</option>
+                                    <option value="buddha"> Buddha</option>
+                                    <option value="kong hu cu"> Kong Hu Cu</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="">No Telp</label>
